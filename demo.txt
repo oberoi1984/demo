@@ -2,4 +2,6 @@ Hello! Everyone. This is GIT Demo.
 
 Adding another line.
 
-Switcher to new branch.
+Switched to new branch.
+
+edited on remote.
