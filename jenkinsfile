@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/your-repo.git'  // Replace with your repository
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'echo "Building the project..."'
+                // Add your build commands here (e.g., mvn package, npm install, etc.)
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'echo "Running tests..."'
+                // Add your test commands here (e.g., pytest, junit, etc.)
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh 'echo "Deploying application..."'
+                // Add deployment steps (e.g., SCP, Kubernetes, AWS, etc.)
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+    }
+}
